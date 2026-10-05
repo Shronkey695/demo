@@ -6,13 +6,13 @@
         <a-scene>
              <a-assets>
       <audio id="soundEffect1" src="sound1.mp3" preload="auto"></audio>
-    <audio id="bgm" src="background.mp3" preload="auto"></audio>
+    <audio id="bgm" src="sigmamusicart-background-music-jazz-597003.mp3" preload="auto"></audio>
  </a-assets>
 
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
-            
+            <a-entity id="music" sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
 
         <a-Dodecahedron color="red" position="1 1 -4" sound="src: #soundEffect1; on: click"></a-Dodecahedron>
         <a-torus color="blue" position="1 1 -4" radius="2" arc="360"
@@ -24,5 +24,20 @@
         dur: 2000;
         "></a-torus>
         </a-scene>
+        <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+
     </body>
 </html>
