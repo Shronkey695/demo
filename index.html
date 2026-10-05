@@ -4,14 +4,17 @@
     </head>
     <body>
         <a-scene>
+             <a-assets>
+      <audio id="soundEffect1" src="sound1.mp3" preload="auto"></audio>
+    <audio id="bgm" src="background.mp3" preload="auto"></audio>
+ </a-assets>
+
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
-            <a-assets>
-      <audio id="soundEffect1" src="sound1.mp3" preload="auto"></audio>
- </a-assets>
+            
 
-        <a-Dodecahedron color="red" position="1 1 -4" sound="src: #soundEffect1 on: click"></a-Dodecahedron>
+        <a-Dodecahedron color="red" position="1 1 -4" sound="src: #soundEffect1; on: click"></a-Dodecahedron>
         <a-torus color="blue" position="1 1 -4" radius="2" arc="360"
         animation="
         property: rotation;
