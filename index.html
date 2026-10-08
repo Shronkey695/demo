@@ -7,6 +7,7 @@
              <a-assets>
       <audio id="bgm" src="Background2.mp3" preload="auto"></audio>
             <audio id="soundEffect1" src="2sounds.mp3" preload="auto"></audio>
+            <audio id="soundEffect2" src="2sounds2.mp3" preload="auto"></audio>     
            </a-assets>
 
             <a-camera>
@@ -15,7 +16,7 @@
             <a-entity id="music" sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
 
         <a-Dodecahedron color="red" position="1 1 -4" sound="src: #soundEffect1; on: click; volume: 1;"></a-Dodecahedron>
-        <a-torus color="blue" position="1 1 -4" radius="2" arc="360"
+        <a-torus color="blue" position="1 1 -4" radius="2" arc="360" sound="src: #soundEffect2; on: click; volume: 1;"
         animation="
         property: rotation;
         from: 0 0 0;
